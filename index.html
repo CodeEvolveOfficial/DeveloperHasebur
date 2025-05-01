@@ -283,59 +283,58 @@ section#Show {
  }
 }
 </style>
-
 <div class='container'>
-<div class='tabs'>
- <button class='active' onclick='filterImages(&apos;all&apos;, event)'>All</button>
- <button onclick='filterImages(&apos;beauty&apos;, event)'>Beauty</button>
- <button onclick='filterImages(&apos;accessories&apos;, event)'>Add-ons</button>
- <button onclick='filterImages(&apos;shop&apos;, event)'>Shop</button>
- <button onclick='filterImages(&apos;clothes&apos;, event)'>Clothes</button>
- <button onclick='filterImages(&apos;pets&apos;, event)'>Pets</button>
+  <div class='tabs'>
+    <button class='active' onclick='filterImages("all", event)'>All</button>
+    <button onclick='filterImages("beauty", event)'>Beauty</button>
+    <button onclick='filterImages("accessories", event)'>Add-ons</button>
+    <button onclick='filterImages("shop", event)'>Shop</button>
+    <button onclick='filterImages("clothes", event)'>Clothes</button>
+    <button onclick='filterImages("pets", event)'>Pets</button>
+  </div>
+
+  <div class='grid' id='imageGrid'></div>
+
+  <!-- Load More Button -->
+  <div class='load-more-container' id='loadMoreContainer'>
+    <button id='loadMoreButton' onclick='loadMoreItems()'>Load More</button>
+  </div>
+
+  <!-- Show Less Button -->
+  <div class='load-more-container' id='showLessContainer' style='display: none;'>
+    <button class='scrolling' data-target='.showx' id='showLessButton' onclick='showLessItems()'>Show Less</button>
+  </div>
 </div>
 
-<div class='grid' id='imageGrid'/>
-
-<!-- Load More Button Row -->
-<div class='load-more-container' id='loadMoreContainer'>
- <button id='loadMoreButton' onclick='loadMoreItems()'>Load More</button>
-</div>
-
-<!-- Show Less Button Row -->
-<div class='load-more-container' id='showLessContainer' style='display: none;'>
- <button class='scrolling' data-target='.showx' id='showLessButton' onclick='showLessItems()'>Show Less</button>
-</div>
-</div>
-
- <script type='text/javascript'>//<![CDATA[
+<script type='text/javascript'>
 const websites = [
- { url: "https://luminouslayers.net/", category: "beauty" },
- { url: "https://beautifycosmetics.net/", category: "beauty" },
- { url: "https://glowify.pro/", category: "beauty" },
- { url: "https://rnbodytransformations.com/", category: "beauty" },
- { url: "https://unimatics.services/", category: "clothes" },
- { url: "https://happyplace.today/", category: "clothes" },
- { url: "https://todoclick.lat/", category: "clothes" },
- { url: "https://vatstore.net/", category: "clothes" },
- { url: "https://opulentscents.net/", category: "accessories" },
- { url: "https://findyourrhythm.net/", category: "accessories" },
- { url: "https://bestoftrends.net/", category: "accessories" },
- { url: "https://aeroscent.net/", category: "accessories" },
- { url: "https://antojosdelsur.net/", category: "accessories" },
- { url: "https://relaxinghumidifiers.com/shop", category: "accessories" },
- { url: "https://trunktidy.net/", category: "accessories" },
- { url: "https://sewingsolutions.services/", category: "accessories" },
- { url: "https://boomsy.lat/shop", category: "accessories" },
- { url: "https://globalmerca.lat/shop", category: "accessories" },
- { url: "https://todoen1.net/", category: "shop" },
- { url: "https://cappy.live/", category: "shop" },
- { url: "https://nkrshop.xyz/", category: "shop" },
- { url: "https://stitchandgifts.net/shop", category: "shop" },
- { url: "https://buygoodsproducts.net/shop", category: "shop" },
- { url: "https://espressoyou.net/", category: "shop" },
- { url: "https://perfectlysweet.net/", category: "pets" },
- { url: "https://andesmarket.xyz/", category: "pets" },
- { url: "https://pawwonders.pro/", category: "pets" },
+  { url: "https://luminouslayers.net/", category: "beauty" },
+  { url: "https://beautifycosmetics.net/", category: "beauty" },
+  { url: "https://glowify.pro/", category: "beauty" },
+  { url: "https://rnbodytransformations.com/", category: "beauty" },
+  { url: "https://unimatics.services/", category: "clothes" },
+  { url: "https://happyplace.today/", category: "clothes" },
+  { url: "https://todoclick.lat/", category: "clothes" },
+  { url: "https://vatstore.net/", category: "clothes" },
+  { url: "https://opulentscents.net/", category: "accessories" },
+  { url: "https://findyourrhythm.net/", category: "accessories" },
+  { url: "https://bestoftrends.net/", category: "accessories" },
+  { url: "https://aeroscent.net/", category: "accessories" },
+  { url: "https://antojosdelsur.net/", category: "accessories" },
+  { url: "https://relaxinghumidifiers.com/shop", category: "accessories" },
+  { url: "https://trunktidy.net/", category: "accessories" },
+  { url: "https://sewingsolutions.services/", category: "accessories" },
+  { url: "https://boomsy.lat/shop", category: "accessories" },
+  { url: "https://globalmerca.lat/shop", category: "accessories" },
+  { url: "https://todoen1.net/", category: "shop" },
+  { url: "https://cappy.live/", category: "shop" },
+  { url: "https://nkrshop.xyz/", category: "shop" },
+  { url: "https://stitchandgifts.net/shop", category: "shop" },
+  { url: "https://buygoodsproducts.net/shop", category: "shop" },
+  { url: "https://espressoyou.net/", category: "shop" },
+  { url: "https://perfectlysweet.net/", category: "pets" },
+  { url: "https://andesmarket.xyz/", category: "pets" },
+  { url: "https://pawwonders.pro/", category: "pets" }
 ];
 
 let itemsToShow = 10;
@@ -343,70 +342,85 @@ let activeCategory = 'all';
 let filteredWebsites = [];
 
 function filterImages(category, event) {
- activeCategory = category;
- const buttons = document.querySelectorAll('.tabs button');
- buttons.forEach(button => button.classList.remove('active'));
- event.target.classList.add('active');
-
- itemsToShow = 10; // Reset items to show
- initializeGrid();
+  activeCategory = category;
+  document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  itemsToShow = 10;
+  initializeGrid();
 }
 
 function initializeGrid() {
- const grid = document.getElementById('imageGrid');
- const loadMoreContainer = document.getElementById('loadMoreContainer');
- const showLessContainer = document.getElementById('showLessContainer');
- grid.innerHTML = ''; // Clear the grid before populating it again
+  const grid = document.getElementById('imageGrid');
+  const loadMoreContainer = document.getElementById('loadMoreContainer');
+  const showLessContainer = document.getElementById('showLessContainer');
+  grid.innerHTML = '';
 
- // Filter websites based on active category
- filteredWebsites = websites.filter(site => activeCategory === 'all' || site.category === activeCategory);
+  filteredWebsites = websites.filter(site => activeCategory === 'all' || site.category === activeCategory);
 
- // Populate grid with the filtered websites
- filteredWebsites.slice(0, itemsToShow).forEach(site => {
-   const div = document.createElement('div');
-   div.classList.add('grid-item');
-   div.setAttribute('data-category', site.category);
+  filteredWebsites.slice(0, itemsToShow).forEach(site => {
+    const div = document.createElement('div');
+    div.classList.add('grid-item');
+    div.setAttribute('data-category', site.category);
 
-   div.innerHTML = `
-     <a href="${site.url}" target="_blank">
-       <img src="//image.thum.io/get/${site.url}" alt="${getWebsiteName(site.url)}">
-     </a>
-     <div class="text">${getWebsiteName(site.url)}</div>
-   `;
-   grid.appendChild(div);
- });
+    div.innerHTML = `
+      <a href="${site.url}" target="_blank">
+        <img 
+          data-src="//image.thum.io/get/${site.url}" 
+          alt="${getWebsiteName(site.url)}"
+          class="lazy-img"
+          loading="lazy"
+          src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200'></svg>"
+        >
+      </a>
+      <div class="text">${getWebsiteName(site.url)}</div>
+    `;
+    grid.appendChild(div);
+  });
 
- // Show or hide buttons
- loadMoreContainer.style.display = filteredWebsites.length > itemsToShow ? 'block' : 'none';
- showLessContainer.style.display = itemsToShow > 10 ? 'block' : 'none';
+  loadMoreContainer.style.display = filteredWebsites.length > itemsToShow ? 'block' : 'none';
+  showLessContainer.style.display = itemsToShow > 10 ? 'block' : 'none';
+
+  // Run lazy loader
+  lazyLoadImages();
 }
 
 function loadMoreItems() {
- itemsToShow += 5; // Show 5 more items
- initializeGrid();
+  itemsToShow += 5;
+  initializeGrid();
 }
 
 function showLessItems() {
- itemsToShow = 10; // Reset to initial 10 items
- initializeGrid();
+  itemsToShow = 10;
+  initializeGrid();
 }
 
 function getWebsiteName(url) {
- return url.replace(/^https?:\/\/(www\.)?/, '').split('.')[0];
+  return url.replace(/^https?:\/\/(www\.)?/, '').split('.')[0];
 }
 
-// Initialize grid with all items shown initially
+function lazyLoadImages() {
+  const lazyImages = document.querySelectorAll('img.lazy-img');
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove('lazy-img');
+        obs.unobserve(img);
+      }
+    });
+  }, {
+    rootMargin: '50px 0px',
+    threshold: 0.01
+  });
+
+  lazyImages.forEach(img => observer.observe(img));
+}
+
+// Initialize the grid on page load
 initializeGrid();
-
-
-
-
-
-
-     
-     //]]>
- 
- </script>
+</script>
 
 
  
@@ -516,82 +530,107 @@ initializeGrid();
           </div>
         </div>
       
-        <script type='text/javascript'>//<![CDATA[
-          const websitesSection2 = [
-            { url: "https://tinysalt.loftocean.com/elementor/food-blog-light/", category: "blogging" },
-            { url: "https://wanderaway.qodeinteractive.com/dolomites/", category: "blogging" },
-            { url: "https://squaretypetheme.com/squaretype/", category: "blogging" },
-            { url: "https://demo.casethemes.net/organio/home-2/", category: "ecommerce" },
-            { url: "https://welldone.axiomthemes.com/nutrition-store/", category: "ecommerce" },
-            { url: "https://alukas.presslayouts.com/home-v12/?layout=v12", category: "ecommerce" },
-            { url: "https://tebewebe.online/furrescue/template-kit/homepage/", category: "services" },
-            { url: "https://live.21lab.co/kiraz/", category: "services" },
-            { url: "https://tronix.themepul.com/cyber-security-demo/home-one-page/", category: "services" },
-          ];
-      
-          let itemsToShowSection2 = 10;
-          let activeCategorySection2 = 'all';
-          let filteredWebsitesSection2 = [];
-      
-          function filterImagesSection2(category, event) {
-            activeCategorySection2 = category;
-            const buttons = document.querySelectorAll('#ShowSection2 .tabs button');
-            buttons.forEach(button => button.classList.remove('active'));
-            event.target.classList.add('active');
-      
-            itemsToShowSection2 = 10; // Reset items to show
-            initializeGridSection2();
-          }
-      
-          function initializeGridSection2() {
-            const grid = document.getElementById('imageGridSection2');
-            const loadMoreContainer = document.getElementById('loadMoreContainerSection2');
-            const showLessContainer = document.getElementById('showLessContainerSection2');
-            grid.innerHTML = ''; // Clear the grid before populating it again
-      
-            // Filter websites based on active category
-            filteredWebsitesSection2 = websitesSection2.filter(
-              site => activeCategorySection2 === 'all' || site.category === activeCategorySection2
-            );
-      
-            // Populate grid with the filtered websites
-            filteredWebsitesSection2.slice(0, itemsToShowSection2).forEach(site => {
-              const div = document.createElement('div');
-              div.classList.add('grid-item');
-              div.setAttribute('data-category', site.category);
-      
-              div.innerHTML = `
-                <a href="${site.url}" target="_blank">
-                  <img src="//image.thum.io/get/${site.url}" alt="${getWebsiteNameSection2(site.url)}">
-                </a>
-                <div class="text">${getWebsiteNameSection2(site.url)}</div>
-              `;
-              grid.appendChild(div);
-            });
-      
-            // Show or hide buttons
-            loadMoreContainer.style.display = filteredWebsitesSection2.length > itemsToShowSection2 ? 'block' : 'none';
-            showLessContainer.style.display = itemsToShowSection2 > 10 ? 'block' : 'none';
-          }
-      
-          function loadMoreItemsSection2() {
-            itemsToShowSection2 += 5; // Show 5 more items
-            initializeGridSection2();
-          }
-      
-          function showLessItemsSection2() {
-            itemsToShowSection2 = 10; // Reset to initial 10 items
-            initializeGridSection2();
-          }
-      
-          function getWebsiteNameSection2(url) {
-            return url.replace(/^https?:\/\/(www\.)?/, '').split('.')[0];
-          }
-      
-          // Initialize grid with all items shown initially
-          initializeGridSection2();
-        //]]>
-        </script>
+<script type='text/javascript'>
+const websitesSection2 = [
+  { url: "https://tinysalt.loftocean.com/elementor/food-blog-light/", category: "blogging" },
+  { url: "https://wanderaway.qodeinteractive.com/dolomites/", category: "blogging" },
+  { url: "https://squaretypetheme.com/squaretype/", category: "blogging" },
+  { url: "https://demo.casethemes.net/organio/home-2/", category: "ecommerce" },
+  { url: "https://welldone.axiomthemes.com/nutrition-store/", category: "ecommerce" },
+  { url: "https://alukas.presslayouts.com/home-v12/?layout=v12", category: "ecommerce" },
+  { url: "https://tebewebe.online/furrescue/template-kit/homepage/", category: "services" },
+  { url: "https://live.21lab.co/kiraz/", category: "services" },
+  { url: "https://tronix.themepul.com/cyber-security-demo/home-one-page/", category: "services" },
+];
+
+let itemsToShowSection2 = 10;
+let activeCategorySection2 = 'all';
+let filteredWebsitesSection2 = [];
+
+function filterImagesSection2(category, event) {
+  activeCategorySection2 = category;
+  const buttons = document.querySelectorAll('#ShowSection2 .tabs button');
+  buttons.forEach(button => button.classList.remove('active'));
+  event.target.classList.add('active');
+
+  itemsToShowSection2 = 10;
+  initializeGridSection2();
+}
+
+function initializeGridSection2() {
+  const grid = document.getElementById('imageGridSection2');
+  const loadMoreContainer = document.getElementById('loadMoreContainerSection2');
+  const showLessContainer = document.getElementById('showLessContainerSection2');
+  grid.innerHTML = '';
+
+  filteredWebsitesSection2 = websitesSection2.filter(
+    site => activeCategorySection2 === 'all' || site.category === activeCategorySection2
+  );
+
+  filteredWebsitesSection2.slice(0, itemsToShowSection2).forEach(site => {
+    const div = document.createElement('div');
+    div.classList.add('grid-item');
+    div.setAttribute('data-category', site.category);
+
+    div.innerHTML = `
+      <a href="${site.url}" target="_blank">
+        <img 
+          data-src="//image.thum.io/get/${site.url}" 
+          alt="${getWebsiteNameSection2(site.url)}"
+          class="lazy-img-section2"
+          loading="lazy"
+          src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200'></svg>"
+        >
+      </a>
+      <div class="text">${getWebsiteNameSection2(site.url)}</div>
+    `;
+    grid.appendChild(div);
+  });
+
+  loadMoreContainer.style.display = filteredWebsitesSection2.length > itemsToShowSection2 ? 'block' : 'none';
+  showLessContainer.style.display = itemsToShowSection2 > 10 ? 'block' : 'none';
+
+  lazyLoadImagesSection2();
+}
+
+function loadMoreItemsSection2() {
+  itemsToShowSection2 += 5;
+  initializeGridSection2();
+}
+
+function showLessItemsSection2() {
+  itemsToShowSection2 = 10;
+  initializeGridSection2();
+}
+
+function getWebsiteNameSection2(url) {
+  return url.replace(/^https?:\/\/(www\.)?/, '').split('.')[0];
+}
+
+function lazyLoadImagesSection2() {
+  const lazyImages = document.querySelectorAll('img.lazy-img-section2');
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove('lazy-img-section2');
+        obs.unobserve(img);
+      }
+    });
+  }, {
+    rootMargin: '50px 0px',
+    threshold: 0.01
+  });
+
+  lazyImages.forEach(img => observer.observe(img));
+}
+
+// Initialize grid
+initializeGridSection2();
+</script>
+
       </section>
       
 
