@@ -1,1 +1,6 @@
-/:path https://developerhasebur.eu.org/ 301
+# Primary catch-all for any path
+/* https://developerhasebur.eu.org/ 301
+
+# Secondary, explicit 404 redirect for anything that fell through
+# This catches requests that Netlify determined are 404s and redirects them
+/404 https://developerhasebur.eu.org/ 301
