@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="TemplateMo">
+
+        <title>Developer Hasebur - WordPress & Shopify Expert</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/magnific-popup.css" rel="stylesheet">
+
+        <link href="css/templatemo-first-portfolio-style.css" rel="stylesheet">
+        
+<!--
+
+Custom Added Css
+
+-->
+<style>
+    img.avatar-image.img-fluid.mmxc {
+    width: 75px;
+    border-radius: 10px 50px 10px 50px;
+}
+
+
+.nanvcon{
+    background-color: black;
+}
+
+.navbar .custom-btn {
+
+    font-size: 13px;
+}
+
+
+main {
+    margin-top: 120px;
+}
+</style>
+    </head>
+    
+    <body>
+
+
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container nanvcon">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a href="index.html" class="navbar-brand mx-auto mx-lg-0">Developer Hasebur</a>
+
+                <div class="d-flex align-items-center d-lg-none">
+                    <i class="navbar-icon bi-telephone-plus me-3"></i>
+                    <a class="custom-btn btn" href="#section_5">
+                        120-240-9600
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_2">Services</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_3">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_4">Tutorials</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_5">Contact</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="./youtube.html">YouTube</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-lg-flex align-items-center d-none ms-auto">
+                        <i class="navbar-icon bi-telephone-plus me-3"></i>
+                        <a class="custom-btn btn" href="#section_5">
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <main>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Developer Hasebur: Shopify & WordPress Insights</title>
+    <style>
+        /* General Body & Typography */
+        body {
+            font-family: 'Poppins', sans-serif; /* Modern, clean font */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; /* Light background */
+            color: #333;
+            -webkit-font-smoothing: antialiased; /* Smoother text rendering */
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- Header (For Brand Consistency) --- */
+        .blog-header {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Vibrant gradient */
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden; /* For subtle background pattern */
+        }
+
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 100% 150%, #2575fc 0%, #6a11cb 70%);
+            opacity: 0.1;
+            transform: scale(2);
+        }
+
+        .blog-header-content {
+            position: relative; /* Ensure content is above pseudo-element */
+            z-index: 1;
+        }
+
+        .blog-header h1 {
+            font-size: 3.2em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* --- Main Content Layout --- */
+        .blog-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 30px; /* Space between cards */
+        }
+
+        /* --- Blog Post Card --- */
+        .blog-post-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column; /* Stack image, then text */
+        }
+
+        .blog-post-card:hover {
+            transform: translateY(-8px); /* Subtle lift effect */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-post-thumb {
+            width: 100%;
+            height: 200px; /* Fixed height for consistent look */
+            overflow: hidden;
+        }
+
+        .blog-post-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers area without distortion */
+            transition: transform 0.3s ease;
+        }
+
+        .blog-post-card:hover .blog-post-thumb img {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        .blog-post-content {
+            padding: 25px;
+            flex-grow: 1; /* Allows content area to expand */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-post-content h2 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .blog-post-content p.excerpt {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 20px;
+            flex-grow: 1; /* Pushes button to bottom */
+        }
+
+        .blog-read-more {
+            display: inline-block;
+            background: linear-gradient(to right, #ff7e5f, #feb47b); /* Warm gradient button */
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            align-self: flex-start; /* Align button to start */
+        }
+
+        .blog-read-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(255, 126, 95, 0.4);
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 992px) {
+            .blog-header h1 {
+                font-size: 2.8em;
+            }
+            .blog-post-content h2 {
+                font-size: 1.6em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-header {
+                padding: 25px 15px;
+            }
+            .blog-header h1 {
+                font-size: 2.5em;
+            }
+            .blog-header p {
+                font-size: 1em;
+            }
+            .blog-container {
+                margin: 30px auto;
+                padding: 0 15px;
+            }
+            .blog-posts-grid {
+                grid-template-columns: 1fr; /* Single column on small screens */
+            }
+            .blog-post-thumb {
+                height: 180px;
+            }
+            .blog-post-content {
+                padding: 20px;
+            }
+            .blog-post-content h2 {
+                font-size: 1.4em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-header h1 {
+                font-size: 2em;
+            }
+            .blog-post-card {
+                border-radius: 8px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="blog-header">
+        <div class="blog-header-content">
+            <h1>Developer Hasebur's Insights</h1>
+            <p>Your go-to source for advanced Shopify & WordPress strategies, theme customizations, and product page optimizations.</p>
+        </div>
+    </header>
+
+    <main class="blog-container">
+        <section class="blog-posts-grid">
+
+            <article class="blog-post-card">
+                <div class="blog-post-thumb">
+                    <img src="https://via.placeholder.com/600x400/6a11cb/ffffff?text=Shopify+Dawn+Theme" alt="Thumbnail for Shopify Dawn Theme Customization">
+                </div>
+                <div class="blog-post-content">
+                    <h2>Mastering Shopify Dawn Theme: Beyond the Basics</h2>
+                    <p class="excerpt">Dive deep into advanced customization techniques for the Shopify Dawn theme. Learn how to implement custom sections, enhance product pages, and optimize for speed and conversions...</p>
+                    <a href="https://developerhasebur.eu.org/blog/post-1.html" class="blog-read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-post-card">
+                <div class="blog-post-thumb">
+                    <img src="https://via.placeholder.com/600x400/2575fc/ffffff?text=WordPress+Performance" alt="Thumbnail for WordPress Performance Optimization">
+                </div>
+                <div class="blog-post-content">
+                    <h2>Speed Up Your WordPress Site: A Comprehensive Guide</h2>
+                    <p class="excerpt">Unlock the secrets to a lightning-fast WordPress website. This post covers caching strategies, image optimization, database cleanup, and critical plugins for peak performance...</p>
+                    <a href="https://developerhasebur.eu.org/blog/post-2.html" class="blog-read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-post-card">
+                <div class="blog-post-thumb">
+                    <img src="https://via.placeholder.com/600x400/feb47b/ffffff?text=Product+Page+UX" alt="Thumbnail for E-commerce Product Page UX">
+                </div>
+                <div class="blog-post-content">
+                    <h2>Designing High-Converting E-commerce Product Pages</h2>
+                    <p class="excerpt">The product page is your store's sales engine. Discover proven UX/UI principles and design elements that drive conversions, reduce bounce rates, and build customer trust...</p>
+                    <a href="https://developerhasebur.eu.org/blog/post-3.html" class="blog-read-more">Read More</a>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <section style="text-align: center; padding: 40px 20px; background-color: #ffffff; margin-top: 50px; box-shadow: 0 -2px 10px rgba(0,0,0,0.05);">
+        <h2 style="color: #2c3e50; font-size: 2em; margin-bottom: 20px;">Need Expert Help with Your Project?</h2>
+        <p style="font-size: 1.1em; color: #555; margin-bottom: 30px;">If you're looking for professional Shopify or WordPress development, custom theme design, or product page optimization, let's connect!</p>
+        <a href="https://developerhasebur.eu.org/#contact" style="display: inline-block; background: linear-gradient(to right, #2575fc, #6a11cb); color: #ffffff; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1em; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">Hire Developer Hasebur</a>
+    </section>
+
+</body>
+</html>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+        </main>
+              <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12">
+                        <div class="copyright-text-wrap">
+                            <p class="mb-0">
+                                <span class="copyright-text">Copyright © 2025 <a href="#">Developer Hasebur</a> . All rights reserved.</span>
+                                
+                                <a rel="sponsored" href="https://www.linkedin.com/in/developer-hasebur/" target="_blank">Developer Hasbur</a>
+                                    <span class="copyright-text"></span>
+                           
+                                    <span class="copyright-text"><a href="https://developerhasebur.eu.org/terms-of-service.html">Terms of service</a></span>
+                                    <span class="copyright-text"> <a href="https://developerhasebur.eu.org/privacy-policy.html">Privacy policy</a></span>
+                                 <span>   <a href="https://developerhasebur.eu.org/safety-and-security.html">Safety & security</a></span>
+                           
+                                  
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/magnific-popup-options.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
+</html>
