@@ -119,8 +119,6 @@ main {
 
 
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,8 +126,8 @@ main {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - Developer Hasebur</title>
     <style>
-        /* General Body Styles */
-        body {
+        /* Unique Class for Body */
+        .tms-body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
@@ -138,8 +136,8 @@ main {
             color: #333;
         }
 
-        /* Container for Policy Content */
-        .policy-container {
+        /* Unique Class for Container */
+        .tms-container {
             max-width: 800px;
             margin: 40px auto;
             background-color: #ffffff;
@@ -148,15 +146,16 @@ main {
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* Headings */
-        h1 {
+        /* Unique Class for H1 */
+        .tms-main-heading {
             font-size: 2.2em;
             color: #2c3e50;
             margin-bottom: 20px;
             text-align: center;
         }
 
-        h2 {
+        /* Unique Class for H2 */
+        .tms-sub-heading {
             font-size: 1.6em;
             color: #34495e;
             margin-top: 30px;
@@ -165,88 +164,89 @@ main {
             padding-bottom: 5px;
         }
 
-        /* Paragraphs */
-        p {
+        /* Unique Class for Paragraphs */
+        .tms-paragraph {
             margin-bottom: 15px;
         }
 
-        /* Strong/Bold Text */
-        strong {
+        /* Unique Class for Strong Text */
+        .tms-strong {
             font-weight: bold;
         }
 
-        /* Lists */
-        ul {
+        /* Unique Class for Lists */
+        .tms-list {
             list-style-type: disc;
             margin-left: 20px;
             margin-bottom: 15px;
         }
 
-        li {
+        /* Unique Class for List Items */
+        .tms-list-item {
             margin-bottom: 8px;
         }
 
-        /* Link Styling (for potential internal links, though not present here) */
-        a {
+        /* Unique Class for Links */
+        .tms-link {
             color: #007bff;
             text-decoration: none;
         }
 
-        a:hover {
+        .tms-link:hover {
             text-decoration: underline;
         }
 
-        /* Responsive Adjustments */
+        /* Responsive Adjustments for this page */
         @media (max-width: 768px) {
-            .policy-container {
+            .tms-container {
                 margin: 20px auto;
                 padding: 25px;
             }
-            h1 {
+            .tms-main-heading {
                 font-size: 1.8em;
             }
-            h2 {
+            .tms-sub-heading {
                 font-size: 1.4em;
             }
-            body {
+            .tms-body {
                 padding: 15px;
             }
         }
     </style>
 </head>
-<body>
-    <div class="policy-container">
-        <h1>Terms of Service</h1>
-        <p><strong>Last Updated: May 25, 2025</strong></p>
+<body class="tms-body">
+    <div class="tms-container">
+        <h1 class="tms-main-heading">Terms of Service</h1>
+        <p class="tms-paragraph"><strong class="tms-strong">Last Updated: May 25, 2025</strong></p>
         
-        <p>Welcome to Developer Hasebur! These Terms of Service ("Terms") govern your use of the website located at https://developerhasebur.eu.org/ (the "Website") and the services provided by Developer Hasebur (Hasebur Rahman).</p>
+        <p class="tms-paragraph">Welcome to Developer Hasebur! These Terms of Service ("Terms") govern your use of the website located at https://developerhasebur.eu.org/ (the "Website") and the services provided by Developer Hasebur (Hasebur Rahman).</p>
         
-        <h2>1. Acceptance of Terms</h2>
-        <p>By accessing or using our Website or services, you agree to be bound by these Terms and all applicable laws and regulations. If you do not agree with any part of these Terms, you are prohibited from using or accessing this Website. The materials contained in this Website are protected by applicable copyright and trademark law.</p>
+        <h2 class="tms-sub-heading">1. Acceptance of Terms</h2>
+        <p class="tms-paragraph">By accessing or using our Website or services, you agree to be bound by these Terms and all applicable laws and regulations. If you do not agree with any part of these Terms, you are prohibited from using or accessing this Website. The materials contained in this Website are protected by applicable copyright and trademark law.</p>
 
-        <h2>2. Services Provided</h2>
-        <p>Developer Hasebur specializes in Shopify & WordPress development, with a special focus on Shopify Theme customization and Product Page optimization. Our services include, but are not limited to, website design, development, maintenance, consultation, and custom coding.</p>
+        <h2 class="tms-sub-heading">2. Services Provided</h2>
+        <p class="tms-paragraph">Developer Hasebur specializes in Shopify & WordPress development, with a special focus on Shopify Theme customization and Product Page optimization. Our services include, but are not limited to, website design, development, maintenance, consultation, and custom coding.</p>
         
-        <h2>3. User Conduct</h2>
-        <p>Users are expected to use the Website and services responsibly and ethically. Any unauthorized use, including but not limited to attempts to access secured areas of the Website, interfere with the operation of the Website, or transmit malicious code, is strictly prohibited.</p>
+        <h2 class="tms-sub-heading">3. User Conduct</h2>
+        <p class="tms-paragraph">Users are expected to use the Website and services responsibly and ethically. Any unauthorized use, including but not limited to attempts to access secured areas of the Website, interfere with the operation of the Website, or transmit malicious code, is strictly prohibited.</p>
         
-        <h2>4. Intellectual Property</h2>
-        <p>All content on this Website, including text, graphics, logos, images, and software, is the property of Developer Hasebur or its content suppliers and is protected by international copyright laws. You may not reproduce, distribute, modify, display, or create derivative works of any content without prior written permission from Developer Hasebur.</p>
+        <h2 class="tms-sub-heading">4. Intellectual Property</h2>
+        <p class="tms-paragraph">All content on this Website, including text, graphics, logos, images, and software, is the property of Developer Hasebur or its content suppliers and is protected by international copyright laws. You may not reproduce, distribute, modify, display, or create derivative works of any content without prior written permission from Developer Hasebur.</p>
 
-        <h2>5. Disclaimer of Warranties</h2>
-        <p>The Website and services are provided on an "as is" and "as available" basis. Developer Hasebur makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+        <h2 class="tms-sub-heading">5. Disclaimer of Warranties</h2>
+        <p class="tms-paragraph">The Website and services are provided on an "as is" and "as available" basis. Developer Hasebur makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
 
-        <h2>6. Limitation of Liability</h2>
-        <p>In no event shall Developer Hasebur or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Developer Hasebur's Website, even if Developer Hasebur or a Developer Hasebur authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
+        <h2 class="tms-sub-heading">6. Limitation of Liability</h2>
+        <p class="tms-paragraph">In no event shall Developer Hasebur or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Developer Hasebur's Website, even if Developer Hasebur or a Developer Hasebur authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
 
-        <h2>7. Governing Law</h2>
-        <p>These terms and conditions are governed by and construed in accordance with the laws of [**Your Country/Region, e.g., Bangladesh**] and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
+        <h2 class="tms-sub-heading">7. Governing Law</h2>
+        <p class="tms-paragraph">These terms and conditions are governed by and construed in accordance with the laws of [**Your Country/Region, e.g., Bangladesh**] and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
 
-        <h2>8. Changes to Terms</h2>
-        <p>Developer Hasebur reserves the right to revise these Terms at any time without notice. By using this Website, you are agreeing to be bound by the then-current version of these Terms.</p>
+        <h2 class="tms-sub-heading">8. Changes to Terms</h2>
+        <p class="tms-paragraph">Developer Hasebur reserves the right to revise these Terms at any time without notice. By using this Website, you are agreeing to be bound by the then-current version of these Terms.</p>
 
-        <h2>9. Contact Information</h2>
-        <p>If you have any questions about these Terms, please contact us at <a href="mailto:developerhasebur@gmail.com">developerhasebur@gmail.com</a>.</p>
+        <h2 class="tms-sub-heading">9. Contact Information</h2>
+        <p class="tms-paragraph">If you have any questions about these Terms, please contact us at <a href="mailto:developerhasebur@gmail.com" class="tms-link">developerhasebur@gmail.com</a>.</p>
     </div>
 </body>
 </html>
